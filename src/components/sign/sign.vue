@@ -66,15 +66,20 @@
         </div>
       </el-tab-pane>
     </el-tabs>
-    <i class="el-icon-close"></i>
+    <i class="el-icon-close" @click="hidesign"></i>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 export default {
+  props: {
+      activeName: {
+        type: String,
+        default: 'second'
+      }
+  },
   data() {
     return {
-      activeName: 'first',
       usersignup: {
         email: '',
         pass: ''
@@ -84,6 +89,9 @@ export default {
   methods: {
     handleClick(tab, event) {
       console.log(tab, event);
+    },
+    hidesign() {
+      this.$emit('hidesign');
     }
   }
 };

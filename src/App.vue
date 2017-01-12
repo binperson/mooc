@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
-    <div class="mask" v-show="true"></div>
-    <sign v-show="true"></sign>
-    <v-header></v-header>
+    <div class="mask" v-show="sign"></div>
+    <sign v-show="sign" @hidesign = "hidesign" :active-name = 'activeName'></sign>
+    <v-header @showsign="showsign"></v-header>
     <router-view></router-view>
   </div>
 </template>
@@ -11,6 +11,21 @@
 import header from 'components/header/header';
 import sign from 'components/sign/sign';
 export default {
+  data() {
+    return {
+      sign: false,
+      activeName: 'first'
+    };
+  },
+  methods: {
+    hidesign() {
+      this.sign = false;
+    },
+    showsign(act) {
+      this.sign = true;
+      this.activeName = act;
+    }
+  },
   components: {
     'v-header': header,
     'sign': sign

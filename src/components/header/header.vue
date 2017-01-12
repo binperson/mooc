@@ -56,16 +56,20 @@
           <div v-else>
             <el-col :span="12" :offset="8">
               <el-row :gutter="2">
-                <el-col :span="10">
-                  <div class="grid-content text-area">
-                    登录
-                  </div>
-                </el-col>
-                <el-col :span="10">
-                  <div class="grid-content text-area">
-                    注册
-                  </div>
-                </el-col>
+                <div @click="showsign('first')">
+                  <el-col :span="10" >
+                    <div class="grid-content text-area">
+                      登录
+                    </div>
+                  </el-col>
+                </div>
+                <div @click="showsign('second')">
+                  <el-col :span="10">
+                    <div class="grid-content text-area">
+                      注册
+                    </div>
+                  </el-col>
+                </div>
               </el-row>
             </el-col>
           </div>
@@ -93,6 +97,9 @@ export default {
     },
     handleIconClick(ev) {
       console.log(ev);
+    },
+    showsign(act) {
+        this.$emit('showsign', act);
     }
   }
 };

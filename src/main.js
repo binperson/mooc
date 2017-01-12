@@ -24,7 +24,8 @@ import {
   TabPane,
   Form,
   FormItem,
-  Button
+  Button,
+  Pagination
 } from 'element-ui';
 
 Vue.component(Row.name, Row);
@@ -41,6 +42,7 @@ Vue.component(TabPane.name, TabPane);
 Vue.component(Form.name, Form);
 Vue.component(FormItem.name, FormItem);
 Vue.component(Button.name, Button);
+Vue.component(Pagination.name, Pagination);
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
