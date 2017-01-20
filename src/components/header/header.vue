@@ -5,29 +5,29 @@
       <el-row :gutter="0">
         <el-col :span="5">
           <div class="grid-content" @click="changeFalse">
-            <router-link to="/index" class="logo">
+            <router-link to="/index" class="logo lineH">
               <div class="logo-content"></div>
             </router-link>
           </div>
         </el-col>
         <el-col :span="2">
           <div class="grid-content" @click="changeTrue">
-            <router-link to="/course" class="text-area">课程</router-link>
+            <router-link to="/course" class="text-area lineH">课程</router-link>
           </div>
         </el-col>
         <el-col :span="2">
           <div class="grid-content" @click="changeTrue">
-            <router-link to="/topics" class="text-area ">专题<i class="icn-new"></i></router-link>
+            <router-link to="/topics" class="text-area lineH">专题<i class="icn-new"></i></router-link>
           </div>
         </el-col>
         <el-col :span="2">
           <div class="grid-content" @click="changeTrue">
-            <router-link to="/question" class="text-area">爱问</router-link>
+            <router-link to="/question" class="text-area lineH">爱问</router-link>
           </div>
         </el-col>
         <el-col :span="2">
           <div class="grid-content" @click="changeTrue">
-            <router-link to="/write" class="text-area">简书</router-link>
+            <router-link to="/write" class="text-area lineH">简书</router-link>
           </div>
         </el-col>
       </el-row>
@@ -47,9 +47,11 @@
     <el-col :span="4">
       <el-row :gutter="10">
           <div v-if="login">
-            <el-col :span="12" :offset="8">
-              <div class="grid-content">
-                <router-link to="/information" class="text-area">个人信息</router-link>
+            <el-col :span="8" :offset="14">
+              <div class="grid-content" @click="changeTrue">
+                <router-link to="/information" class="text-area">
+                  <userCard></userCard>
+                </router-link>
               </div>
             </el-col>
           </div>
@@ -80,11 +82,12 @@
 </template>
 
 <script type="text/ecmascript-6">
+import userCard from 'components/userCard/userCard';
 export default {
   data() {
     return {
       isActive: false,
-      login: false,
+      login: true,
       inputkey: ''
     };
   },
@@ -101,6 +104,9 @@ export default {
     showsign(act) {
         this.$emit('showsign', act);
     }
+  },
+  components: {
+    userCard
   }
 };
 </script>
@@ -121,9 +127,10 @@ export default {
             background: #252020
     .grid-content
       height: 60px
-      line-height: 60px
-      text-align: center
       color: #787d82
+      .lineH
+        line-height: 60px
+        text-align: center
       .logo
         display: block
         padding-left: 20px
@@ -138,8 +145,6 @@ export default {
         display: block
         color: #000000
         font-size: 14px
-        &.active
-          background: #252020
         .icn-new
           position: relative
           display: inline-block

@@ -11,7 +11,7 @@
                 <h2>iOS基础语法与常用控件</h2>
                 <div class="courseinfo">
                   <span class="l">14节课</span>
-                  <span class="l">4人学习</span>
+                  <span class="l">1小时41分</span>
                 </div>
                 <p>零基础也能迅速入门iOS开发</p>
               </div>
@@ -34,7 +34,7 @@
                 <h2>iOS基础语法与常用控件</h2>
                 <div class="courseinfo">
                   <span class="l">14节课</span>
-                  <span class="l">4人学习</span>
+                  <span class="l">1小时41分</span>
                 </div>
                 <p>零基础也能迅速入门iOS开发</p>
               </div>
@@ -57,7 +57,7 @@
                 <h2>iOS基础语法与常用控件</h2>
                 <div class="courseinfo">
                   <span class="l">14节课</span>
-                  <span class="l">4人学习</span>
+                  <span class="l">1小时41分</span>
                 </div>
                 <p>零基础也能迅速入门iOS开发</p>
               </div>

@@ -117,16 +117,7 @@
                 </div>
               </div>
             </div>
-            <div class="page clearfix">
-              <el-pagination
-                @size-change="handleSizeChange"
-                @current-change="handleCurrentChange"
-                :current-page="currentPage3"
-                :page-size="100"
-                layout="prev, pager, next, jumper"
-                :total="1000">
-              </el-pagination>
-            </div>
+            <pagebar></pagebar>
           </div>
         </div>
         <div class="r ques-slider">
@@ -160,23 +151,11 @@
 
 <script type="text/ecmascript-6">
 import footer from 'components/footer/footer';
+import pagebar from 'components/pagebar/pagebar';
 export default {
-  methods: {
-    handleSizeChange(val) {
-      console.log(`每页 ${val} 条`);
-    },
-    handleCurrentChange(val) {
-      this.currentPage = val;
-      console.log(`当前页: ${val}`);
-    }
-  },
-  data() {
-    return {
-      currentPage3: 5
-    };
-  },
   components: {
-    'v-footer': footer
+    'v-footer': footer,
+    pagebar
   }
 };
 </script>
@@ -308,21 +287,6 @@ export default {
                 padding: 0 9px
                 em
                   margin-left: 3px
-        .page
-          margin: 40px auto 50px
-          text-align: center
-          button, li, span
-            height: 36px
-            line-height: 36px
-            font-size: 16px
-          li
-            min-width: 36px
-            &:hover
-              color: #4d555d
-              background: #d9dde1
-            &.active
-              border-color: #4d555d
-              background: #4d555d
     .ques-slider
       width: 280px
       .hot-ques
