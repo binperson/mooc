@@ -1,194 +1,632 @@
 <template>
-  <div>课程</div>
+  <div class="course">
+    <div class="wrap">
+      <div class="top">
+        <div class="course-content">
+          <div class="course-nav-box">
+            <div class="course-nav-row clearfix">
+              <div class="hd l">
+                分类：
+              </div>
+              <div class="bd">
+                <ul>
+                  <li class="course-nav-item on"><a href="">全部</a></li>
+                  <li class="course-nav-item"><a href="">计算机</a></li>
+                  <li class="course-nav-item"><a href="">经济学</a></li>
+                  <li class="course-nav-item"><a href="">法学</a></li>
+                  <li class="course-nav-item"><a href="">教育学</a></li>
+                  <li class="course-nav-item"><a href="">文学</a></li>
+                  <li class="course-nav-item"><a href="">历史学</a></li>
+                  <li class="course-nav-item"><a href="">理学</a></li>
+                  <li class="course-nav-item"><a href="">工学</a></li>
+                  <li class="course-nav-item"><a href="">医学</a></li>
+                  <li class="course-nav-item"><a href="">管理学</a></li>
+                  <li class="course-nav-item"><a href="">艺术</a></li>
+                  <li class="course-nav-item"><a href="">其他</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="course-nav-row course-nav-row clearfix">
+              <div class="hd l">
+                状态：
+              </div>
+              <div class="bd">
+                <ul>
+                  <li class="course-nav-item on"><a href="">全部</a></li>
+                  <li class="course-nav-item"><a href="">开课中</a></li>
+                  <li class="course-nav-item"><a href="">即将开课</a></li>
+                  <li class="course-nav-item"><a href="">已结课</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="course-tool-bar clearfix">
+        <div class="tool-left l">
+          <a class="sort-item active">最新</a>
+          <a class="sort-item">最热</a>
+        </div>
+      </div>
+      <div class="course-list">
+        <div class="moco-course-list">
+          <ul class="clearfix">
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="moco-course-wrap">
+              <div class="moco-course-tag">即将开课</div>
+              <i class="moco-course-tag-bg"></i>
+              <a href="">
+                <div class="moco-course-box">
+                  <img src="./img.jpg" height="124" width="100%" alt="">
+                  <div class="moco-course-intro">
+                    <h3><i>高</i>Yarn构建工具入门基础</h3>
+                    <p>带你了解 facebook 新工具yarn。</p>
+                  </div>
+                  <div class="moco-course-bottom">
+                    <span class="l"> 813人在学</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <pagebar></pagebar>
+    </div>
+    <v-footer></v-footer>
+  </div>
 </template>
 
 <script type="text/ecmascript-6">
+import footer from 'components/footer/footer';
+import pagebar from 'components/pagebar/pagebar';
 export default {
-
+  components: {
+    'v-footer': footer,
+    pagebar
+  }
 };
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+.course
+  min-height: 750px
+  padding: 0 0 99px 0
+  background: #f3f5f7
+  .wrap
+    width: 100%
+    background-color: #fff
+    padding-bottom: 12px
+    .top
+      width: 1200px
+      margin: auto
+      .course-content
+        padding-top: 12px
+        float: none
+        width: 100%
+        box-shadow: none
+        .course-nav-row
+          padding: 16px 0 5px
+          border-bottom: 1px solid #edf1f2
+          &.course-nav-row
+            padding: 16px 0 5px
+            border-bottom: none
+          .hd
+            width: 52px
+            height: 20px
+            line-height: 30px
+            font-weight: 700
+            font-size: 14px
+            color: #07111b
+            text-align: right
+          .bd
+            margin-left: 64px
+            .course-nav-item
+              display: inline-block
+              margin: 0 6px
+              &.on
+                a
+                  background: #f01400
+                  color: #fff
+              a
+                display: block
+                line-height: 14px
+                margin-bottom: 10px
+                padding: 9px 12px
+                font-size: 14px
+                color: #14191e
+  .container
+    margin: 0 auto
+    width: 1200px
+    .course-tool-bar
+      position: relative
+      padding-top: 26px
+      padding-bottom: 16px
+      overflow: hidden
+      height: 14px!important
+      margin-top: -1px
+      padding-right: 15px
+      font-size: 12px
+      a
+        &.sort-item
+          margin: 0 12px
+          line-height: 14px
+          font-size: 14px
+          color: #787d82
+          &.active
+            color: #f01414
+    .course-list
+      padding: 10px 0 20px
+      .moco-course-list
+        margin: -10px
+        .moco-course-wrap
+          float: left
+          margin: 10px
+          background-color: #fff
+          box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1)
+          position: relative
+          &:hover
+            box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2)
+          .moco-course-tag
+            position: absolute
+            left: -4px
+            top: 4px
+            z-index: 1
+            font-size: 12px
+            color: #fff
+            padding: 0 6px
+            height: 20px
+            line-height: 20px
+            background: #00b33b
+          .course-tag-bg
+            position: absolute
+            display: inline-block
+            left: -4px
+            top: 24px
+            z-index: 1
+            width: 0
+            height: 0
+            border-top: 4px solid #4d555d
+            border-left: 4px solid transparent
+          .moco-course-box
+            width: 224px
+            height: 172px
+            box-sizing: border-box
+            overflow: hidden
+            position: relative
+            &:hover
+              .moco-course-intro
+                top: 28px
+            .moco-course-intro
+              box-sizing: border-box
+              position: absolute
+              padding: 0 20px
+              transition: top .5s
+              top: 65px
+              height: 144px
+              width: 100%
+              background-image: url(./bg-course.png)
+              h3
+                margin: 0
+                padding: 16px 0 6px
+                font-size: 14px
+                max-height: 40px
+                overflow: hidden
+                color: #07111b
+                line-height: 21px
+                i
+                  float: left
+                  margin-top: 2px
+                  margin-right: 4px
+                  padding: 2px
+                  font-style: normal
+                  font-size: 12px
+                  color: #fff
+                  line-height: 12px
+                  border-radius: 1px
+                  background-color: #93999f
+              p
+                color: #93999f
+                font-size: 12px
+                height: 40px
+                overflow: hidden
+                line-height: 20px
+            .moco-course-bottom
+              position: absolute
+              padding: 0 20px
+              bottom: 0
+              box-sizing: border-box
+              width: 100%
+              height: 42px
+              background-color: #fff
+              color: #93999f
+              font-size: 12px
+              line-height: 36px
 
 </style>
 
-{
-  "user": {
-    "duty": "student",
-    "useremail": "549346275@qq.com",
-    "username": "binperson",
-    "avatar": "./header.png",
-    "signature": "34443",
-    "learnTime": "64小时41分",
-    "recentlyLearn": {
-      "title": "用JS实现购物车特效",
-      "content": "1-1 JS实现购物车功能介绍"
-    },
-    "personContent": {
-      "homepage": [
-        {
-          "title": "frrdd"
-        }
-      ],
-      "course": [],
-      "question": [],
-      "write": []
-    },
-  },
-  "topics": {
-    "banner": "./lujing2.jpg",
-    "course": [
-      {
-        "title": "iOS基础语法与常用控件",
-        "section": 14,
-        "learnTime": "1小时41分",
-        "desc": "零基础也能迅速入门iOS开发",
-        "learnNum": 5342
-      },
-      {
-        "title": "iOS基础语法与常用控件",
-        "section": 14,
-        "learnTime": "1小时41分",
-        "desc": "零基础也能迅速入门iOS开发",
-        "learnNum": 5342
-      },
-      {
-        "title": "iOS基础语法与常用控件",
-        "section": 14,
-        "learnTime": "1小时41分",
-        "desc": "零基础也能迅速入门iOS开发",
-        "learnNum": 5342
-      }
-    ]
-  },
-  "ques": {
-    "hot": [
-      {
-        "title": "话说，大家想编程的最初初衷是什么",
-        "replyNum": 8,
-        "attentionNum": 12
-      },
-      {
-        "title": "话说，大家想编程的最初初衷是什么",
-        "replyNum": 8,
-        "attentionNum": 12
-      },{
-        "title": "话说，大家想编程的最初初衷是什么",
-        "replyNum": 8,
-        "attentionNum": 12
-      }
-    ],
-    "recommend": [
-      {
-        "title": "我这样写有错吗",
-        "questioner": "weeq",
-        "replier": [
-          {
-            "name": "nns",
-            "content": "var count=0写在循环里，那每次循环count都会被先赋值为0，并且循环外面拿不到count<...code...>把count写外面",
-            "agree": 1,
-            "oppose": 0
-          },
-          {
-            "name": "nns",
-            "content": "var count=0写在循环里，那每次循环count都会被先赋值为0，并且循环外面拿不到count<...code...>把count写外面",
-            "agree": 1,
-            "oppose": 0
-          }
-        ]
-      },
-      {
-        "title": "我这样写有错吗",
-        "questioner": "weeq",
-        "replier": [
-          {
-            "name": "nns",
-            "content": "var count=0写在循环里，那每次循环count都会被先赋值为0，并且循环外面拿不到count<...code...>把count写外面",
-            "agree": 1,
-            "oppose": 0
-          },
-          {
-            "name": "nns",
-            "content": "var count=0写在循环里，那每次循环count都会被先赋值为0，并且循环外面拿不到count<...code...>把count写外面",
-            "agree": 1,
-            "oppose": 0
-          }
-        ]
-      }
-    ]
-  },
-  "write": {
-    "recommend": [
-      {
-        "title": "17来实战免单，第一波获奖名单出来了",
-        "content": "经过一天的激烈角逐 ，第一波(1月11日)的实战整点免单落下了帷幕 一起跟随小慕回顾一下昨日的战报吧，看看自己有没有上榜！！！ 恭喜这7名用户夺得实战免单资格：qq_ALLEN_313597606、醒着做梦2、困了不睡、蓝with黑、慕粉1147402862、JiannaiJ、Brook",
-        "author": "幕女神",
-        "browse": 42,
-        "recomNum": 5,
-        "comment": [
-          {
-            "content": "那每次循环count都会被先赋值为0"
-          },
-          {
-            "content": "那每次循环count都会被先赋值为0"
-          }
-        ]
-      }
-    ],
-    "recomauthor": [
-      {
-        "anthorHead": "xxx.jpg",
-        "anthorName": "binperson",
-        "anthorDuty": "移动开发工程师"
-      }
-    ],
-    "selectRecom": [
-      {
-        "title": "17来实战免单，第一波获奖名单出来了",
-        "content": "经过一天的激烈角逐 ，第一波(1月11日)的实战整点免单落下了帷幕 一起跟随小慕回顾一下昨日的战报吧，看看自己有没有上榜！！！ 恭喜这7名用户夺得实战免单资格：qq_ALLEN_313597606、醒着做梦2、困了不睡、蓝with黑、慕粉1147402862、JiannaiJ、Brook",
-        "author": "幕女神",
-        "browse": 42,
-        "recomNum": 5,
-        "comment": [
-          {
-            "content": "那每次循环count都会被先赋值为0"
-          },
-          {
-            "content": "那每次循环count都会被先赋值为0"
-          }
-        ]
-      }
-    ]
-  }
-}
-
-
-# Chai
-
-Chai is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework.
-
-Chai是一个用于node和浏览器的BDD / TDD断言库，可以与任何JavaScript测试框架配合使用。
-
-Chai has several interfaces that allow the developer to choose the most comfortable. The chain-capable BDD styles provide an expressive language & readable style, while the TDD assert style provides a more classical feel.
-
-Chai有几个接口，允许开发人员选择最舒适。 链式BDD样式提供了一种表达性语言和可读风格，而TDD断言样式提供了更古典的感觉。
-
-Plugins extend Chai's assertions to new contexts such as vendor integration & object construction. Developers can build their own plugins to share with community or use the plugin pattern to DRY up existing tests.
-
-插件将Chai的断言延伸到新的上下文，例如供应商集成和对象构造。 开发人员可以构建他们自己的插件以与社区共享或使用插件模式DRY现有测试。
-
-### Welcome to Chai
-
-We are glad that you have decided to give Chai.js a try! If this is your first visit, get acquainted with the basics, such as installation and our included assertion styles.
-
-### The Basics
-
-Install Chai in node, the browser, and other environments.
-Learn about styles that you can use to define assertions.
-
-### Making Plugins
-
-After you have a solid knowledge of what is included in Chai, the next step is learning how to extend Chai through plugins. Chai is infinitely more powerful than what is included, limited only by what you want to achieve. The Plugin API is also intended as a way to simplify testing by providing users a way to encapsulate common assertions for repeat use.
-
-Core Plugin Concepts covers the basics of using the Chai Plugin API.
-Building a Helper is a walkthrough for writing your first plugin.

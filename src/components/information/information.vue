@@ -31,6 +31,11 @@
         <div class="user-pic">
           <div class="user-pic-bg"></div>
           <img src="./header.jpg" alt="">
+          <div class="set-btn">
+            <a href="">
+              <i class="icon-cog"></i>
+            </a>
+          </div>
         </div>
         <ul>
           <li>
@@ -183,6 +188,18 @@ export default {
           height: 192px
           border-radius: 95px
           transition: all .3s
+        .set-btn
+          width: 24px
+          height: 24px
+          position: absolute
+          left: 0
+          top: 0
+          i
+            font-size: 24px
+            color: #787d82
+            opacity: .7
+            &:hover
+              opacity: 1
       li
         height: 60px
         border-bottom: 1px solid #EDF1F2
