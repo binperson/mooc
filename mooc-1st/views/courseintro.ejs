@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>MOOC</title>
+  <link rel="stylesheet" href="lib/css/bootstrap.css">
+  <link rel="stylesheet" href="css/index.css">
+  <!--[if lt IE 9]>
+    <script src="lib/html5shiv/html5shiv.min.js"></script>
+    <script src="lib/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+    <body>
+    <!-- 头部区域 -->
+ <%include header1.ejs%>
+
+  <section id="daohang">
+    <div class="container">
+      <div>
+        <ul class="clearfix">
+          <li><a href="#">课程\</a></li>
+          <li><a href="#"><%=title%></a></li>
+
+        </ul>
+      </div>
+      <div><h1><%=title%></h1></div>
+      <div>
+      <ul class="other">
+        <li>
+          <h5>高级</h5>
+          <p>难度</p>
+        </li>
+        <li>
+          <h5>7小时 0分</h5>
+          <p>时长</p>
+        </li>
+        <li>
+          <h5>68017</h5>
+          <p>学习人数</p>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </section>
+  <section id="jiesao">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="list1">
+            <h3>课程介绍</h3>
+            <p><%=intro%></p>
+          </div>
+          <div class="line"></div>
+          <div>
+            <h3>课程提纲</h3>
+            <ul class="list1">
+              <%for(var i = 0;i<content.length;i++){%>
+              <li>
+                <img src="img/biaoz.jpg">
+                <h4><%=content[i].title%></h4>
+                <p><%=content[i].intro%></p>
+              </li>
+              <%}%>
+            </ul>
+          </div>
+
+        </div>
+        <div class="col-md-3 nav1">
+          <div><a href="/coursedetail/<%=cid%>" type="button" class="btn btn-default navbar-btn">开始学习</a></div>
+
+          <div id="clearpos">
+             <img src="img/pingfen.png">
+          </div>
+          <div>
+            <h4>讲师提示</h4>
+            <div class="line"></div>
+          </div>
+          <div  id="binperson1" class="clearfix">
+            <ul>
+              <li><img src="img/binperson.jpg"></li>
+              <li>
+                <h4>徐彬</h4>
+                <p>JAVA高级开发工程师</p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <img src="img/mark.png">
+          </div>
+          <div style="margin-top: 30px;">
+            <h4>其他同学还学过</h4>
+          </div>
+          <div class="line"></div>
+          <div style="margin-top: 10px; height: 110px;">
+            <a href=""><img src="img/springMVC.jpg"></a>
+
+          </div>
+          <div class="line"></div>
+          <div><h4>Java入门第三季</h4></div>
+          <div class="line" style="margin-top: 10px;"></div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <footer class="footall1">
+  <div class="container">
+    <ul class="clearfix">
+      <li><a href="#">网站首页</a></li>
+      <li><a href="#">人才招聘</a></li>
+      <li><a href="#">联系我们</a></li>
+      <li><a href="#">慕课云</a></li>
+      <li><a href="#">关于我们</a></li>
+      <li><a href="#">讲师招募</a></li>
+      <li><a href="#">意见反馈</a></li>
+      <li><a href="#">友情链接</a></li>
+    </ul>
+    <p>Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>
+  </div>
+
+</footer>
+ <script src="lib/js/jquery.js"></script>
+  <script src="lib/js/bootstrap.js"></script>
+ <!--  <script src="js/main.js"></script> -->
+
+</body>
+
+</html>

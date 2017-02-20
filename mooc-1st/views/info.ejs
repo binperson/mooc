@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>MOOC</title>
+  <link rel="stylesheet" href="lib/css/bootstrap.css">
+  <link rel="stylesheet" href="css/index.css">
+  <!--[if lt IE 9]>
+  <script src="lib/html5shiv/html5shiv.min.js"></script>
+  <script src="lib/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <!-- 头部区域 -->
+  <%include header1.ejs%>
+  <div id="info-main">
+    <div class="top">
+      <div class="w960 mauto top_title">
+        <p>个人设置</p>
+      </div>
+    </div>
+    <div class="setting pb10">
+      <div class="nav-tabs pa">
+        <div class="baseinfo fl active">基本信息</div>
+      </div>
+      <div class="contentBox">
+        <div class="formBox">
+          <div class="setting-wrap setting-profile">
+            <div class="wlfg-wrap clearfix ">
+              <label class="label-name" for="job">头像:</label>
+              <div class="rlf-group">
+                <img style="height: 180px;width: 180px;" src="/avatar/<%=avatar%>" alt=""></div>
+              <a type="button" href="/setavatar" class="btn btn-default">更改头像</a>
+            </div>
+            <form>
+              <div class="wlfg-wrap clearfix">
+                <label class="label-name" for="">昵称：</label>
+                <div class="rlf-group">
+                  <input id="usernameinfo" class="moco-form-control" type="text" value="<%=username%>" placeholder="请输入昵称.">
+                  <p class="rlf-tip-wrap errorHint color-red"></p>
+                </div>
+              </div>
+              <div class="wlfg-wrap clearfix">
+                <label style="margin-top: 3px;" class="label-name h16 lh16" for="">职业：</label>
+                <div class="rlf-group rlf-radio-group">
+                  <label class="label-name h16 lh16" for=""><input type="radio" hidefocus="true" value="student"<%if(occupation=="student"){%>checked="checked"<%}%> name="occupation">学生</label>
+                  <label class="label-name h16 lh16" for=""><input type="radio" hidefocus="true" value="teacher" <%if(occupation=="teacher"){%>checked="checked"<%}%> name="occupation">老师</label>
+                </div>
+                <p class="rlf-tip-wrap errorHint color-red"></p>
+              </div>
+              <div class="wlfg-wrap clearfix">
+                <label class="label-name" for="aboutme">个性签名：</label>
+                <div class="rlf-group">
+                  <div class="pr">
+                    <textarea id="textareainfo" rows="5" class="noresize js-sign moco-form-control"><%=autograph%></textarea>
+                    <p class="numCanInput js-numCanInput ">还可以输入128个字符</p>
+                  </div>
+                </div>
+              </div>
+               <div class="wlfg-wrap clearfix">
+                <label class="label-name" for="aboutme"></label>
+                <div class="rlf-group">
+                  <button id="modify" type="button" class="btn btn-success">修改</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footall1">
+  <div class="container">
+    <ul class="clearfix">
+      <li>
+        <a href="#">网站首页</a>
+      </li>
+      <li>
+        <a href="#">人才招聘</a>
+      </li>
+      <li>
+        <a href="#">联系我们</a>
+      </li>
+      <li>
+        <a href="#">慕课云</a>
+      </li>
+      <li>
+        <a href="#">关于我们</a>
+      </li>
+      <li>
+        <a href="#">讲师招募</a>
+      </li>
+      <li>
+        <a href="#">意见反馈</a>
+      </li>
+      <li>
+        <a href="#">友情链接</a>
+      </li>
+    </ul>
+    <p>
+      Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2
+    </p>
+  </div>
+
+</footer>
+<script src="lib/js/jquery.js"></script>
+<script src="lib/js/bootstrap.js"></script>
+<!--  <script src="js/main.js"></script>
+-->
+<script type="text/javascript">
+  $(function(){
+    $("#modify").click(function(){
+      $.post("/modifyinfo",{"username":$("#usernameinfo").val(),
+        "occupation":$("input[type='radio']:checked").val(),
+        "autograph":$("#textareainfo").val()},function(result){
+          if(result=="1"){
+            window.location="/info";
+          }else if(result=="-1"){
+            alert("用户名被占用");
+          }else if(result=="-3"){
+
+          }
+      })
+
+    });
+  });
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>MOOC</title>
+  <link rel="stylesheet" href="lib/css/bootstrap.css">
+  <link rel="stylesheet" href="css/index.css">
+  <!--[if lt IE 9]>
+  <script src="lib/html5shiv/html5shiv.min.js"></script>
+  <script src="lib/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <!-- 头部区域 -->
+  <%include header1.ejs%>
+  <section>
+    <video width="100%" height="700px" controls="controls" poster="toy.png" autoplay="autoplay">
+
+      <source src="../<%=link.slice(26)%>
+      " type="video/mp4">
+      <object type="application/x-shockwave-flash" data="http://static.youku.com/v1.0.0557/v/swf/loader.swf" width="100%" height="100%" id="movie_player">
+        <param name="allowFullScreen" value="true">
+        <param name="allowscriptaccess" value="always">
+        <param name="allowFullScreenInteractive" value="true">
+        <param name="flashvars" value="VideoIDS=XMTMwNDAzNzM4NA==&amp;ShowId=0&amp;category=85&amp;Cp=0&amp;ev=1&amp;Light=on&amp;THX=off&amp;unCookie=0&amp;frame=0&amp;pvid=1439005764768c9QpaT&amp;uepflag=1&amp;Tid=0&amp;isAutoPlay=true&amp;Version=/v1.0.1080&amp;show_ce=0&amp;winType=interior&amp;Type=Folder&amp;Fid=25977506&amp;Pt=0&amp;Ob=1&amp;plchid=z&amp;openScanCode=1&amp;scanCodeText=&quot;限时&quot; 扫码免广告&amp;embedid=AjMyNjAwOTM0NgJ3d3cueW91a3UuY29tAi8=&amp;vext=bc%3D%26pid%3D1439005764768c9QpaT%26unCookie%3D0%26frame%3D0%26type%3D1%26fob%3D1%26fpo%3D0%26svt%3D0%26emb%3DAjMyNjAwOTM0NgJ3d3cueW91a3UuY29tAi8%3D%26dn%3D%E7%BD%91%E9%A1%B5%26hwc%3D1%26mtype%3Doth&amp;pageStartTime=1439005764766">
+        <param name="movie" value="http://static.youku.com/v1.0.0557/v/swf/loader.swf">
+        <div class="player_html5">
+          <div class="picture" style="height:100%">
+            <div style="line-height:460px;">
+              <span style="font-size:18px">
+                您还没有安装flash播放器,请点击
+                <a href="http://www.adobe.com/go/getflash" target="_blank">这里</a>
+                安装
+              </span>
+            </div>
+          </div>
+        </div>
+      </object>
+    </video>
+  </section>
+  <section id="main_ye">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <div>
+            <ul class="nav nav-tabs">
+              <li role="presentation" class="active"  id="main_a1">
+                <a href="javascript:void(0)">
+                  <h4>评论</h4>
+                </a>
+              </li>
+
+              <li role="presentation" id="main_a2">
+                <a href="javascript:void(0)">
+                  <h4>笔记</h4>
+                </a>
+              </li>
+              <li role="presentation"  id="main_a3">
+                <a href="javascript:void(0)">
+                  <h4>测试</h4>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div id="main_pinglun">
+            <div class="pinglun1 clearfix">
+
+              <textarea id="content" rows="5" cols="118.5" placeholder="表扬、吐槽、鼓励······想说啥就说啥!"></textarea>
+              <button id="fabiao" type="text" class="btn btn-right">发表评论</button>
+
+            </div>
+            <div class="line"></div>
+            <div>
+              <ul id="p" style="margin: 0;padding: 0;"></ul>
+
+            </div>
+
+          </div>
+
+        <div id="main_biji">
+          <div class="pinglun1 clearfix">
+
+            <form>
+              <textarea rows="5" cols="118.5" placeholder="标记、记录、回忆······想记啥就记啥!"></textarea>
+              <button type="password" class="btn btn-right">记录笔记</button>
+            </form>
+          </div>
+          <div class="line"></div>
+
+          <h3>yansv</h3>
+          <p>
+            如果想为元素设置层模型中的相对定位，需要设置position:relative（表示相对定位），它通过left、right、top、bottom属性确定元素在正常文档流中的偏移位置。相对定位完成的过程是首先按static(float)方式生成一个元素(并且元素像层一样浮动了起来)，然后相对于以前的位置移动，移动的方向和幅度由left、right、top、bottom属性确定，偏移前的位置保留不动。
+          </p>
+
+          <div class="line"></div>
+
+          <h3>yansv</h3>
+          <p>
+            如果想为元素设置层模型中的相对定位，需要设置position:relative（表示相对定位），它通过left、right、top、bottom属性确定元素在正常文档流中的偏移位置。相对定位完成的过程是首先按static(float)方式生成一个元素(并且元素像层一样浮动了起来)，然后相对于以前的位置移动，移动的方向和幅度由left、right、top、bottom属性确定，偏移前的位置保留不动。
+          </p>
+
+          <div class="line"></div>
+
+          <h3>yansv</h3>
+          <p>
+            如果想为元素设置层模型中的相对定位，需要设置position:relative（表示相对定位），它通过left、right、top、bottom属性确定元素在正常文档流中的偏移位置。相对定位完成的过程是首先按static(float)方式生成一个元素(并且元素像层一样浮动了起来)，然后相对于以前的位置移动，移动的方向和幅度由left、right、top、bottom属性确定，偏移前的位置保留不动。
+          </p>
+
+          <div class="line"></div>
+
+          <h3>yansv</h3>
+          <p>
+            如果想为元素设置层模型中的相对定位，需要设置position:relative（表示相对定位），它通过left、right、top、bottom属性确定元素在正常文档流中的偏移位置。相对定位完成的过程是首先按static(float)方式生成一个元素(并且元素像层一样浮动了起来)，然后相对于以前的位置移动，移动的方向和幅度由left、right、top、bottom属性确定，偏移前的位置保留不动。
+          </p>
+          <div class="line"></div>
+        </div>
+        <div id="main_ceshi">
+          <h6 style="margin-top: 20px;">考试的提交截止时间已过，你可以作为自我学习进行考试，但是提交的结果将无法获得学分。</h6>
+          <h6 style="margin-bottom: 20px;">本次考试包含5道单选题，每题4分，满分为100分。要求在一周内用连续的60分钟完成。</h6>
+          <ul style="list-style: none;margin: 0;padding: 0;">
+            <h4>若一搜索树（查找树）是有n个结点的完全二叉树，则不正确的说法是：</h4>
+            <li>
+              <input type="radio"/>
+              A平均查找效率是
+            </li>
+            <li>
+              <input type="radio"/>
+              B平均查找效率是
+            </li>
+            <li>
+              <input type="radio"/>
+              C平均查找效率是
+            </li>
+            <li>
+              <input type="radio"/>
+              D平均查找效率是
+            </li>
+          </ul>
+          <div class="line"></div>
+          <ul style="list-style: none;margin: 0;padding: 0;">
+            <h4>若一搜索树（查找树）是有n个结点的完全二叉树，则不正确的说法是：</h4>
+            <li>
+              <input type="radio"/>
+              A平均查找效率是
+            </li>
+            <li>
+              <input type="radio"/>
+              B平均查找效率是
+            </li>
+            <li>
+              <input type="radio"/>
+              C平均查找效率是
+            </li>
+            <li>
+              <input type="radio"/>
+              D平均查找效率是
+            </li>
+            <div class="line"></div>
+            <ul style="list-style: none;margin: 0;padding: 0;">
+              <h4>若一搜索树（查找树）是有n个结点的完全二叉树，则不正确的说法是：</h4>
+              <li>
+                <input type="radio"/>
+                A平均查找效率是
+              </li>
+              <li>
+                <input type="radio"/>
+                B平均查找效率是
+              </li>
+              <li>
+                <input type="radio"/>
+                C平均查找效率是
+              </li>
+              <li>
+                <input type="radio"/>
+                D平均查找效率是
+              </li>
+              <div class="line"></div>
+              <ul style="list-style: none;margin: 0;padding: 0;">
+                <h4>若一搜索树（查找树）是有n个结点的完全二叉树，则不正确的说法是：</h4>
+                <li>
+                  <input type="radio"/>
+                  A平均查找效率是
+                </li>
+                <li>
+                  <input type="radio"/>
+                  B平均查找效率是
+                </li>
+                <li>
+                  <input type="radio"/>
+                  C平均查找效率是
+                </li>
+                <li>
+                  <input type="radio"/>
+                  D平均查找效率是
+                </li>
+                <div class="line"></div>
+                <ul style="list-style: none;margin: 0;padding: 0;">
+                  <h4>若一搜索树（查找树）是有n个结点的完全二叉树，则不正确的说法是：</h4>
+                  <li>
+                    <input type="radio"/>
+                    A平均查找效率是
+                  </li>
+                  <li>
+                    <input type="radio"/>
+                    B平均查找效率是
+                  </li>
+                  <li>
+                    <input type="radio"/>
+                    C平均查找效率是
+                  </li>
+                  <li>
+                    <input type="radio"/>
+                    D平均查找效率是
+                  </li>
+                  <div class="line"></div>
+                  <div class="pinglun1 clearfix">
+
+                    <form>
+
+                      <button type="password" class="btn btn-right">提交</button>
+                    </form>
+                  </div>
+
+                </div>
+              </div>
+              <div class="col-md-3">
+                <h4>资料下载</h4>
+                <div class="line"></div>
+                <div class="xiazai"> <i><img src="img/wenjian.jpg" alt=""></i>
+                  <span>Junit的jar包</span>
+                  <a href="#">下载</a>
+                </div>
+                <div class="line"></div>
+                <div class="xiazai"> <i><img src="img/wenjian.jpg" alt=""></i>
+                  <span>Junit的jar包1</span>
+                  <a href="#">下载</a>
+                </div>
+                <div class="line"></div>
+                <div class="xiazai">
+                  <i>
+                    <img src="img/wenjian.jpg" alt=""></i>
+                  <span>Junit的jar包2</span>
+                  <a href="#">下载</a>
+                </div>
+                <div class="line"></div>
+                <div class="xiazai">
+                  <i>
+                    <img src="img/wenjian.jpg" alt=""></i>
+                  <span>Spring前四章源代码</span>
+                  <a href="#">下载</a>
+                </div>
+                <div class="line"></div>
+                <div class="xiazai">
+                  <i>
+                    <img src="img/wenjian.jpg" alt=""></i>
+                  <span>spring javadoc-api</span>
+                  <a href="#">下载</a>
+                </div>
+                <div class="line"></div>
+                <div class="xiazai">
+                  <i>
+                    <img src="img/wenjian.jpg" alt=""></i>
+                  <span>spring-framework-reference</span>
+                  <a href="#">下载</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footall1">
+          <div class="container">
+            <ul class="clearfix">
+              <li>
+                <a href="#">网站首页</a>
+              </li>
+              <li>
+                <a href="#">人才招聘</a>
+              </li>
+              <li>
+                <a href="#">联系我们</a>
+              </li>
+              <li>
+                <a href="#">慕课云</a>
+              </li>
+              <li>
+                <a href="#">关于我们</a>
+              </li>
+              <li>
+                <a href="#">讲师招募</a>
+              </li>
+              <li>
+                <a href="#">意见反馈</a>
+              </li>
+              <li>
+                <a href="#">友情链接</a>
+              </li>
+            </ul>
+            <p>
+              Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2
+            </p>
+          </div>
+<input type="hidden" id="hid" value="<%=autograph%>">
+        </footer>
+        <script src="lib/js/jquery.js"></script>
+        <script src="lib/js/bootstrap.js"></script>
+        <script src="lib/js/template.js"></script>
+        <!--  <script src="js/main.js"></script>
+      -->
+      <script type="text/javascript">
+   $("#main_biji").hide();
+$("#main_ceshi").hide();
+
+
+
+$("#main_a1").click(function(){
+  $("#main_pinglun").show();
+  $("#main_biji").hide();
+  $("#main_ceshi").hide();
+});
+$("#main_a2").click(function(){
+  $("#main_biji").show();
+  $("#main_pinglun").hide();
+  $("#main_ceshi").hide();
+});
+$("#main_a3").click(function(){
+  $("#main_ceshi").show();
+  $("#main_biji").hide();
+  $("main_pinglun").hide();
+});
+
+$("#fabiao").click(function(){
+
+      $.post("/post",{
+        "content" : $("#content").val(),
+        "datetime":new Date()
+      },function(result){
+        if(result=="1"){
+          var src = $("#imgId")[0].src;
+          var username = $("#username").html();
+          var pcontent = $("#content").val();
+          var time = new Date();
+          var xiaoweiba = $("#hid").val();
+          var str = '<li class="post-row"><div class="media"><a href="javascript:void(0);"><img src='+src+' height="40" width="40" alt=""></a></div><div class="bd"><div class="tit"><a href="javascript:void(0);">'+username+'</a></div><p class="cnt">'+pcontent+'</p><div class="footer clearfix"><div class="l">时间：'+time+'<a class="from" href="javascript:void(0);">源自：'+xiaoweiba+'</a></div></div></div></li>';
+
+
+          $("#p").prepend(str);
+        }else{
+          //服务器错误
+          alert("发表失败，请联系管理员")
+        }
+      });
+    });
+ </script>
+      <script id="cidallcomments" type="text/html">
+  <li class="post-row">
+                <div class="media">
+                  <a href="javascript:void(0);">
+                    <img src="/avatar/{{avatar}}" height="40" width="40" alt=""></a>
+                </div>
+                <div class="bd">
+                  <div class="tit">
+                    <a href="javascript:void(0);">{{username}}</a>
+                  </div>
+                  <p class="cnt">{{content}}</p>
+                  <div class="footer clearfix">
+                    <div class="l">时间：{{datetime}}<a class="from" href="javascript:void(0);">源自：{{from}}</a></div>
+                  </div>
+                </div>
+              </li>
+</script>
+      <script type="text/javascript">
+  $(function(){
+      $.ajax({
+        "url":"/localcomments",
+        "type":"get",
+        "success":function(result){
+          for(var i = 0;i<result.length;i++) {
+
+            var html = template('cidallcomments', result[i]);
+            $("#p").prepend($(html));
+          }
+        }
+      })
+    });
+</script></body>
+
+    </html>

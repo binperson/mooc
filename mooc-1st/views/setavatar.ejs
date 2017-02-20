@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>MOOC</title>
+  <link rel="stylesheet" href="lib/css/bootstrap.css">
+  <link rel="stylesheet" href="css/index.css">
+  <!--[if lt IE 9]>
+  <script src="lib/html5shiv/html5shiv.min.js"></script>
+  <script src="lib/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <!-- 头部区域 -->
+  <%include header1.ejs%>
+  <section id="intro" style="min-height: 500px;">
+      <div class="container">
+        <h1>上传头像</h1>
+        <form action="/dosetavatar" method="post" enctype="multipart/form-data">
+
+          <div class="form-group form-group-lg">
+            <label for="useremail">请更改头像</label>
+            <input type="file" class="form-control" id="touxiang" name="touxiang"></div>
+
+          <button type="submit" class="btn btn-success btn-lg">上传</button>
+
+        </form>
+      </div>
+    </section>
+    <!-- intro结束 -->
+
+<footer class="footall1">
+  <div class="container">
+    <ul class="clearfix">
+      <li>
+        <a href="#">网站首页</a>
+      </li>
+      <li>
+        <a href="#">人才招聘</a>
+      </li>
+      <li>
+        <a href="#">联系我们</a>
+      </li>
+      <li>
+        <a href="#">慕课云</a>
+      </li>
+      <li>
+        <a href="#">关于我们</a>
+      </li>
+      <li>
+        <a href="#">讲师招募</a>
+      </li>
+      <li>
+        <a href="#">意见反馈</a>
+      </li>
+      <li>
+        <a href="#">友情链接</a>
+      </li>
+    </ul>
+    <p>
+      Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2
+    </p>
+  </div>
+
+</footer>
+<script src="lib/js/jquery.js"></script>
+<script src="lib/js/bootstrap.js"></script>
+<!--  <script src="js/main.js"></script>
+-->
+</body>
+
+</html>

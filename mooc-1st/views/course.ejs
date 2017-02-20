@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>MOOC</title>
+  <link rel="stylesheet" href="lib/css/bootstrap.css">
+  <link rel="stylesheet" href="css/index.css">
+  <!--[if lt IE 9]>
+  <script src="lib/html5shiv/html5shiv.min.js"></script>
+  <script src="lib/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <!-- 头部区域 -->
+  <%include header1.ejs%>
+  <section id="course1">
+    <div class="container">
+
+      <div class="course-nav-row clearfix">
+        <span class="hd l">分类：</span>
+        <div class="bd">
+          <ul class="">
+            <li class="course-nav-item active">
+              <a href="#">全部</a>
+            </li>
+            <li class="course-nav-item">
+              <a href="#">前端开发</a>
+            </li>
+            <li class="course-nav-itemon">
+              <a href="#">后端开发</a>
+            </li>
+            <li class="course-nav-item">
+              <a href="#">移动开发</a>
+            </li>
+            <li class="course-nav-item">
+              <a href="#">数据库</a>
+            </li>
+            <li class="course-nav-item">
+              <a href="#">云计算&大数据</a>
+            </li>
+            <li class="course-nav-item">
+              <a href="#">运维&测试</a>
+            </li>
+            <li class="course-nav-item">
+              <a href="#">视觉设计</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section id="mian_course">
+    <div id="course-content" class="container">
+
+
+
+    </div>
+  </section>
+
+  <footer class="footall1">
+    <div class="container">
+      <ul class="clearfix">
+        <li>
+          <a href="#">网站首页</a>
+        </li>
+        <li>
+          <a href="#">人才招聘</a>
+        </li>
+        <li>
+          <a href="#">联系我们</a>
+        </li>
+        <li>
+          <a href="#">慕课云</a>
+        </li>
+        <li>
+          <a href="#">关于我们</a>
+        </li>
+        <li>
+          <a href="#">讲师招募</a>
+        </li>
+        <li>
+          <a href="#">意见反馈</a>
+        </li>
+        <li>
+          <a href="#">友情链接</a>
+        </li>
+      </ul>
+      <p>
+        Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2
+      </p>
+    </div>
+
+  </footer>
+  <script src="lib/js/jquery.js"></script>
+  <script src="lib/js/bootstrap.js"></script>
+  <script src="lib/js/template.js"></script>
+  <script id="course" type="text/html">
+    <a href="/course/{{courseindex}}">
+        <div class="col-md-3">
+          <img src="../{{imglink}}">
+          <h4>{{title}}</h4>
+          <p>{{intro}}</p>
+          <span>更新完毕</span>
+          <span>67971人学习</span>
+        </div>
+      </a>
+  </script>
+  <script>
+    $(function(){
+      $.ajax({
+        "url":"/allcourse",
+        "type":"get",
+        "success":function(result){
+          for(var i = 0;i<result.length;i++) {
+            var a = result[i].imglink.slice(26);
+
+          result[i].imglink = a;
+            var html = template('course', result[i]);
+            $("#course-content").append($(html));
+          }
+        }
+      })
+    });
+  </script>
+</body>
+
+</html>

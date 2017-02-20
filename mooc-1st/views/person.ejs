@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>MOOC</title>
+  <link rel="stylesheet" href="lib/css/bootstrap.css">
+  <link rel="stylesheet" href="css/index.css">
+  <!--[if lt IE 9]>
+    <script src="lib/html5shiv/html5shiv.min.js"></script>
+    <script src="lib/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+    <body>
+    <!-- 头部区域 -->
+ <%include header1.ejs%>
+   <section id="daohang">
+   <!-- <div class="container-fluid"> -->
+     <div style="background: url(img/temp1.jpg);height: 200px;">
+     <div class="container">
+        <div class="col-md-3">
+          <img src="/avatar/<%=avatar%>" style="position: relative;top: 20px;" alt="">
+
+        </div>
+        <div class="col-md-9">
+          <h3 style="color: #ffffff;margin-top: 90px;"><%=username%></h3>
+          <%if(autograph){%>
+          <p><%=autograph%></p>
+          <%}else{%>
+          <p>这位同学很懒，木有签名的说～</p>
+          <%}%>
+      </div>
+    </div>
+     </div>
+   <!-- </div> -->
+  </section>
+  <section id="jiesao" style="margin-top: 30px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+<a href="#"><h4>主页</h4></a>
+<div class="line4"></div>
+<div><h4>课程</h4></div>
+
+        </div>
+        <div class="col-md-9" style="border-left: 1px solid;">
+<h4>最近学习</h4>
+<div class="line4"></div>
+<%for(var i = 0;i < content.length;i++){%>
+  <a href="/coursedetail/<%=content[i].cid%>"><div style="padding: 20px;border-bottom: #d8d4d4 solid 1px;">
+    <img height="135px" width="240px" src="<%= content[i].imglink.slice(26) %>" alt="">
+    <div style="margin-top: 20px;"><h4 style="color: black;"><%=content[i].title%></h4></div>
+  </div></a>
+  <%}%>
+      </div>
+    </div>
+  </div>
+  </section>
+
+ <footer class="footall1">
+  <div class="container">
+    <ul class="clearfix">
+      <li><a href="#">网站首页</a></li>
+      <li><a href="#">人才招聘</a></li>
+      <li><a href="#">联系我们</a></li>
+      <li><a href="#">慕课云</a></li>
+      <li><a href="#">关于我们</a></li>
+      <li><a href="#">讲师招募</a></li>
+      <li><a href="#">意见反馈</a></li>
+      <li><a href="#">友情链接</a></li>
+    </ul>
+    <p>Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>
+  </div>
+
+</footer>
+ <script src="lib/js/jquery.js"></script>
+  <script src="lib/js/bootstrap.js"></script>
+ <!--  <script src="js/main.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+
+  <div id="header">
+
+    <nav class="navbar navbar-binperson" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <span class="logo"></span>
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="/course">课程</a>
+            </li>
+            <li>
+              <a href="#">用户</a>
+            </li>
+            <li>
+              <a href="/chat">聊天室</a>
+            </li>
+            <%if(occupation=="teacher"){%>
+            <li>
+              <a href="/manage">管理课程</a>
+            </li>
+            <%}%>
+
+
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+
+            <li>
+              <a href="#">
+                <span class="icon-mobile"></span>
+              </a>
+            </li>
+            <%if(login){%>
+            <li>
+              <a href="">
+                欢迎您！
+              </a>
+            </li>
+            <li id="detail">
+              <a style="padding: 10px; display:block;" href="/person">
+                <div style="border-radius: 20px; overflow: hidden;">
+                  <img width="40" height="40" src="/avatar/<%=avatar%>" alt=""></div>
+              </a>
+              <div class="g-user-card">
+                <div class="card-inner">
+                  <div class="card-top">
+                    <a href=""><img src="/avatar/<%=avatar%>" alt=""></a>
+                    <a href=""><span class="name text-ellipsis"><%=username%></span></a>
+                    <p class="meta">
+                      <a href="">经验<b id="js-user-mp">100</b></a>
+                      <a href="">积分<b id="js-user-credit">0</b></a>
+                    </p>
+                  </div>
+                  <div class="card-sets clearfix ">
+                    <div class="pull-right"><a href="/info">个人设置</a>
+                      <a href="/out">退出</a></div>
+                  </div>
+                </div>
+              </div>
+              <li>
+                <%}else{%>
+                <li>
+                  <a id="login" data-toggle="modal" data-target="#myModal">登录</a>
+                </li>
+                <li>
+                  <a id="register" data-toggle="modal" data-target="#myModal">注册</a>
+                </li>
+                <%}%></ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>

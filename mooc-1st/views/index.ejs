@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="ds.png">
+  <title>慕课</title>
+
+  <!-- Bootstrap -->
+  <link href="lib/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <!--[if lt IE 9]>
+  <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<%include header.ejs%>
+  <div class="bk"></div>
+  <div class="pr">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="img/bg1.jpg" alt="...">
+          <div class="carousel-caption"></div>
+        </div>
+        <div class="item">
+          <img src="img/bg2.jpg" alt="...">
+          <div class="carousel-caption"></div>
+        </div>
+        <div class="item">
+          <img src="img/bg3.jpg" alt="...">
+          <div class="carousel-caption"></div>
+        </div>
+        <div class="item">
+          <img src="img/bg4.jpg" alt="...">
+          <div class="carousel-caption"></div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <div class="menuContent">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <a href="#">
+            前端开发
+            <span class="icon-chevron-right"></a>
+          </li>
+          <li class="list-group-item">
+            <a href="#">
+              后端开发
+              <span class="icon-chevron-right"></a>
+            </li>
+            <li class="list-group-item">
+              <a href="#">
+                移动开发
+                <span class="icon-chevron-right"></a>
+              </li>
+              <li class="list-group-item">
+                <a href="#">
+                  数据库
+                  <span class="icon-chevron-right"></a>
+                </li>
+                <li class="list-group-item">
+                  <a href="#">
+                    云计算&大数据
+                    <span class="icon-chevron-right"></a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#">
+                      运维&测试
+                      <span class="icon-chevron-right"></a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="#">
+                        视觉设计
+                        <span class="icon-chevron-right"></span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="actual">
+                <div class="container" id="course-list">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h3>精品课程</h3>
+                    </div>
+                  </div>
+                  <!-- Example row of columns -->
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="content">
+                        <a href="">
+                          <div class="top">
+                            <img src="img/1.jpg" alt=""></div>
+                          <div class="bottom">
+                            <h2>贯穿全栈React Native开发App</h2>
+                            <p class="desc">18小时纯干货讲解前沿技术React Native，以全栈角度学习前端到后端，学会它，1个人也能开发出一款产品。</p>
+                            <div class="bottom-data clearfix">
+                              <div class="member pull-left">25人学习</div>
+                              <div class="detail pull-right">
+                                <a class="btn btn-default btn-sm" href="#" role="button">查看详情 &raquo;</a>
+                              </div>
+                            </div>
+
+                          </div>
+                        </a>
+
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="content">
+                        <a href="">
+                          <div class="top">
+                            <img src="img/2.jpg" alt=""></div>
+                          <div class="bottom">
+                            <h2>双剑合璧Laravel，AngularJS全栈开发知乎</h2>
+                            <p class="desc">1前端AngularJS，后端Laravel，开发一个你自己的“知乎”，特别适合这两门技术的初学者</p>
+                            <div class="bottom-data clearfix">
+                              <div class="member pull-left">88人学习</div>
+                              <div class="detail pull-right">
+                                <a class="btn btn-default btn-sm" href="#" role="button">查看详情 &raquo;</a>
+                              </div>
+                            </div>
+
+                          </div>
+                        </a>
+
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="content">
+                        <a href="">
+                          <div class="top">
+                            <img src="img/3.jpg" alt=""></div>
+                          <div class="bottom">
+                            <h2>Yii2.0全力出击打造完整电商平台</h2>
+                            <p class="desc">完整电商业务流程详解、企业级实战开发环境，购物、下单、支付、收货......各功能模块逐一开发，打造一个京东模式电商平台</p>
+                            <div class="bottom-data clearfix">
+                              <div class="member pull-left">411人学习</div>
+                              <div class="detail pull-right">
+                                <a class="btn btn-default btn-sm" href="#" role="button">查看详情 &raquo;</a>
+                              </div>
+                            </div>
+
+                          </div>
+                        </a>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="content">
+                        <a href="">
+                          <div class="top">
+                            <img src="img/4.jpg" alt=""></div>
+                          <div class="bottom">
+                            <h2>7天搞定Node.js微信公众号开发</h2>
+                            <p class="desc">用Koa框架、ES2015新特性及MongoDB数据库，开发微信公众号。</p>
+                            <div class="bottom-data clearfix">
+                              <div class="member pull-left">928人学习</div>
+                              <div class="detail pull-right">
+                                <a class="btn btn-default btn-sm" href="#" role="button">查看详情 &raquo;</a>
+                              </div>
+                            </div>
+
+                          </div>
+                        </a>
+
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="content">
+                        <a href="">
+                          <div class="top">
+                            <img src="img/5.jpg" alt=""></div>
+                          <div class="bottom">
+                            <h2>组件方式开发 Web App全站</h2>
+                            <p class="desc">用HTML5/CSS3/JS流行技术，以组件式开发WebApp全站。</p>
+                            <div class="bottom-data clearfix">
+                              <div class="member pull-left">1388人学习</div>
+                              <div class="detail pull-right">
+                                <a class="btn btn-default btn-sm" href="#" role="button">查看详情 &raquo;</a>
+                              </div>
+                            </div>
+
+                          </div>
+                        </a>
+
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="content">
+                        <a href="">
+                          <div class="top">
+                            <img src="img/6.jpg" alt=""></div>
+                          <div class="bottom">
+                            <h2>HTML5 移动Web App阅读器</h2>
+                            <p class="desc">用HTML5、ES6、Ajax异步、Touch事件等技术，开发商业Web APP</p>
+                            <div class="bottom-data clearfix">
+                              <div class="member pull-left">1626人学习</div>
+                              <div class="detail pull-right">
+                                <a class="btn btn-default btn-sm" href="#" role="button">查看详情 &raquo;</a>
+                              </div>
+                            </div>
+
+                          </div>
+                        </a>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div id="footer">
+                <div class="container">
+                  <a href="#">关于我们</a>
+                  <a href="#">企业合作</a>
+                  <a href="#">人才招聘</a>
+                  <a href="#">讲师招募</a>
+                  <a href="#">联系我们</a>
+                  <a href="#">意见反馈</a>
+                  <a href="#">友情链接</a>
+                </div>
+              </div>
+              <!-- /container -->
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                      </button>
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                          <a href="#">登录</a>
+                        </li>
+                        <li role="presentation">
+                          <a href="#">注册</a>
+                        </li>
+
+                      </ul>
+                    </div>
+                    <div class="dz-form">
+                      <form role="form">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">用户邮箱</label>
+                          <input type="email" class="form-control" id="useremail" placeholder="邮箱"></div>
+                        <div class="form-group">
+                        <div style="width: 318px;height: 20px"><div id="cuowukuang" class="cuowukuang alert alert-warning">已注册</div><div id="cuowukuang1" class="cuowukuang alert alert-warning">该邮箱未注册</div>
+                        </div>
+                          <label for="exampleInputPassword1">密码</label>
+                          <input type="password" class="form-control" id="userpassword" placeholder="密码">
+                          <div style="width: 318px;height: 20px"><div id="cuowukuang2" class="cuowukuang alert alert-warning">密码错误</div>
+                        </div>
+                        </div>
+
+                        <button id="denglu" type="button" class="btn btn-default">登录</button><button id="zhuce" type="button" class="btn btn-default bin-hide">注册</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+              <script src="lib/js/jquery.js"></script>
+              <!-- Include all compiled plugins (below), or include individual files as needed -->
+              <script src="lib/js/bootstrap.min.js"></script>
+              <script src="js/main.js"></script>
+              <script>
+                $("input").focus(function(){
+                  $(".cuowukuang").fadeOut();
+                });
+                $("#zhuce").click(function(){
+                  $.post("/doregist",{
+                    "useremail":$("#useremail").val(),
+                    "userpassword":$("#userpassword").val()
+                  },function(result){
+                    if(result=="1"){
+                      window.location="/mooc";
+                    }else if(result=="-1"){
+                      $("#cuowukuang").fadeIn();
+                    }else if(result == "-3"){
+
+                    }
+                  })
+                });
+                $('#denglu').click(function(){
+                  var a = $('#useremail').val();
+                  $.post('/dologin',{
+                    "useremail":a,
+                    "userpassword":$("#userpassword").val()
+                  },function(result){
+                    if(result=="1"){
+                      window.location = "/mooc";
+                    }else if(result=="-1"){
+                      $("#cuowukuang1").fadeIn();
+                    }else if(result == "-2"){
+                      $("#cuowukuang2").fadeIn();
+                    }else if(result == "-5"){
+
+                    }
+                  })
+                })
+
+              </script>
+</body>
+</html>

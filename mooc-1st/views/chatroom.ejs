@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>MOOC</title>
+  <link rel="stylesheet" href="lib/css/bootstrap.css">
+  <link rel="stylesheet" href="css/index.css">
+  <style type="text/css">
+    .caozuo{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 100px;
+      background-color: #ccc;
+      width: 100%;
+    }
+    .caozuo input{
+      font-size: 30px;
+    }
+    .caozuo input[type=text]{
+      width: 100%;
+    }
+  </style>
+  <!--[if lt IE 9]>
+  <script src="lib/html5shiv/html5shiv.min.js"></script>
+  <script src="lib/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <!-- 头部区域 -->
+  <%include header1.ejs%>
+  <div style="min-height: 450px; position: relative;">
+    <h1>欢迎你：<span id="yonghu"><%=username%></span></h1>
+  <div>
+    <ul class="liebiao">
+
+    </ul>
+  </div>
+
+  <div class="caozuo">
+    <input type="text" id="neirong" />
+  </div>
+  </div>
+
+
+<footer class="footall1" style="margin-top: 0;">
+  <div class="container">
+    <ul class="clearfix">
+      <li>
+        <a href="#">网站首页</a>
+      </li>
+      <li>
+        <a href="#">人才招聘</a>
+      </li>
+      <li>
+        <a href="#">联系我们</a>
+      </li>
+      <li>
+        <a href="#">慕课云</a>
+      </li>
+      <li>
+        <a href="#">关于我们</a>
+      </li>
+      <li>
+        <a href="#">讲师招募</a>
+      </li>
+      <li>
+        <a href="#">意见反馈</a>
+      </li>
+      <li>
+        <a href="#">友情链接</a>
+      </li>
+    </ul>
+    <p>
+      Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2
+    </p>
+  </div>
+
+</footer>
+<script src="lib/js/jquery.js"></script>
+<script src="lib/js/bootstrap.js"></script>
+<!--  <script src="js/main.js"></script>
+-->
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+    var socket = io();
+    $("#neirong").keydown(function(e){
+      if(e.keyCode == 13){
+        //把文本框的内容上传：
+        socket.emit("liaotian",{
+          "neirong" : $("#neirong").val(),
+          "ren" : $("#yonghu").html()
+        });
+        $(this).val("");
+      }
+    });
+
+    socket.on("liaotian",function(msg){
+      $(".liebiao").prepend("<li><b>" + msg.ren + "：</b>"+ msg.neirong + "</li>");
+    });
+  </script>
+
+</body>
+
+</html>

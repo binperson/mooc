@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>MOOC</title>
+  <link rel="stylesheet" href="lib/css/bootstrap.css">
+  <link rel="stylesheet" href="css/index.css">
+  <!--[if lt IE 9]>
+    <script src="lib/html5shiv/html5shiv.min.js"></script>
+    <script src="lib/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+    <body>
+    <!-- 头部区域 -->
+ <%include header1.ejs%>
+   <section id="daohang">
+    <div class="container">
+      <div>
+        <ul class="clearfix">
+          <li><a href="#">课程\</a></li>
+
+          <li><%=title%></li>
+        </ul>
+      </div>
+      <div><h1><%=title%></h1></div>
+      <div>
+      <ul class="other">
+        <li>
+          <h5>高级</h5>
+          <p>难度</p>
+        </li>
+        <li>
+          <h5>7小时 0分</h5>
+          <p>时长</p>
+        </li>
+        <li>
+          <h5>68017</h5>
+          <p>学习人数</p>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </section>
+  <section id="jiesao">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+        <div>
+          <ul class="nav nav-tabs">
+              <li id="c" role="presentation" class="active"><a href="javascript:void(0);"><h4>全部章节</h4></a></li>
+              <li id="p" role="presentation"><a href="javascript:void(0);"><h4>全部评论</h4></a></li>
+
+            </ul>
+
+            <ul id="shiping">
+
+ <%for(var i = 0;i<content.length;i++){%>
+
+              <li><a href="/coursemain/<%=cid%><%="?chapter="%><%=i%>"><img src="img/btn1.jpg"><h4><%=content[i].title%></h4></a></li>
+              <%}%>
+
+            </ul>
+            <div id="pinglun" style="display: none;">
+              <ul id="p1"></ul>
+            </div>
+            </div>
+          </div>
+
+        <div class="col-md-3">
+
+
+          <div id="clearpos">
+             <img src="img/pingfen.png">
+          </div>
+          <div>
+            <h4>讲师提示</h4>
+            <div class="line"></div>
+          </div>
+          <div  id="binperson1" class="clearfix">
+            <ul>
+              <li><img src="img/binperson.jpg"></li>
+              <li>
+                <h4>徐彬</h4>
+                <p>JAVA高级开发工程师</p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <img src="img/mark.png">
+          </div>
+          <div style="margin-top: 30px;">
+            <h4>其他同学还学过</h4>
+          </div>
+          <div class="line"></div>
+          <div style="margin-top: 10px; height: 110px;">
+            <a href=""><img src="img/springMVC.jpg"></a>
+
+          </div>
+          <div class="line"></div>
+          <div><h4>Java入门第三季</h4></div>
+          <div class="line" style="margin-top: 10px;"></div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <footer class="footall1">
+  <div class="container">
+    <ul class="clearfix">
+      <li><a href="#">网站首页</a></li>
+      <li><a href="#">人才招聘</a></li>
+      <li><a href="#">联系我们</a></li>
+      <li><a href="#">慕课云</a></li>
+      <li><a href="#">关于我们</a></li>
+      <li><a href="#">讲师招募</a></li>
+      <li><a href="#">意见反馈</a></li>
+      <li><a href="#">友情链接</a></li>
+    </ul>
+    <p>Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>
+  </div>
+
+</footer>
+ <script src="lib/js/jquery.js"></script>
+  <script src="lib/js/bootstrap.js"></script>
+  <script src="lib/js/template.js"></script>
+ <!--  <script src="js/main.js"></script> -->
+ <script type="text/javascript">
+            $(function(){
+              $("#p").click(function(){
+                if ( !$(this).hasClass("active") ){
+                  $(this).hasClass("active")
+                  $("#c").removeClass();
+                  $("#shiping").hide();
+                  $("#pinglun").show();
+                }
+              });
+              $("#c").click(function(){
+                if ( !$(this).hasClass("active") ){
+                  $(this).hasClass("active")
+                  $("#p").removeClass("active");
+                  $("#shiping").show();
+                  $("#pinglun").hide();
+                }
+              });
+            });
+          </script>
+          <script id="cidallcomments" type="text/html">
+  <li class="post-row">
+    <div class="media">
+      <a href="javascript:void(0);">
+        <img src="/avatar/{{avatar}}" height="40" width="40" alt=""></a>
+    </div>
+    <div class="bd">
+      <div class="tit">
+        <a href="javascript:void(0);">{{username}}</a>
+      </div>
+      <p class="cnt">{{content}}</p>
+      <div class="footer clearfix">
+        <div class="l">
+          时间：{{datetime}}
+          <a class="from" href="javascript:void(0);">源自：{{from}}</a>
+        </div>
+      </div>
+    </div>
+  </li>
+</script>
+      <script type="text/javascript">
+  $(function(){
+      $.ajax({
+        "url":"/localcomments",
+        "type":"get",
+        "success":function(result){
+          for(var i = 0;i<result.length;i++) {
+
+            var html = template('cidallcomments', result[i]);
+            $("#p1").prepend($(html));
+          }
+        }
+      })
+    });
+</script>
+
+</body>
+
+</html>

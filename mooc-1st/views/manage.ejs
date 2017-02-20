@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>MOOC</title>
+  <link rel="stylesheet" href="lib/css/bootstrap.css">
+  <link rel="stylesheet" href="css/index.css">
+  <!--[if lt IE 9]>
+  <script src="lib/html5shiv/html5shiv.min.js"></script>
+  <script src="lib/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <!-- 头部区域 -->
+  <%include header1.ejs%>
+  <section id="manage">
+    <div class="container">
+      <div class="col-md-3">
+        <div class="list-group">
+          <a id="showall" href="#" class="list-group-item active">全部课程</a>
+          <a id="tianjia" href="javascript:void(0);" class="list-group-item">添加</a>
+          <a id="mdelete" href="#" class="list-group-item">删除</a>
+
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div id="evercourse" class="courselist domanage"></div>
+        <div id="addform" class="domanage">
+          <form role="form" method="post" action="/doaddcourse" enctype="multipart/form-data">
+            <div class="form-group">
+              <label>课程名</label>
+              <input type="text"  name="coursetitle" class="form-control" placeholder="请输入课程名"></div>
+            <div class="form-group">
+              <label>课程介绍</label>
+              <input type="text" name="courseintro" class="form-control" placeholder="请输入课程介绍"></div>
+            <div class="form-group">
+              <label for="exampleInputFile">课程封面</label>
+              <input type="file" name="courseimg">
+              <p class="help-block">上传课程封面</p>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputFile">类别：</label>
+
+              <input type="checkbox" name="coursecategory" value="0">
+              前端开发
+              <input type="checkbox" name="coursecategory" value="1">
+              后端开发
+              <input type="checkbox" name="coursecategory" value="2">
+              移动开发
+              <input type="checkbox" name="coursecategory" value="3">
+              数据库
+              <input type="checkbox" name="coursecategory" value="4">
+              云计算&大数据
+              <input type="checkbox" name="coursecategory" value="5">
+              运维&测试
+              <input type="checkbox" name="coursecategory" value="6">视觉设计</div>
+            <div class="form-group">
+              <label for="exampleInputFile">课程内容</label>
+              <div id="zj-content"></div>
+              <button style="margin-top: 20px;" id="zj-add" type="button" class="btn btn-default btn-sm">添加内容</button>
+
+            </div>
+            <button type="submit" class="btn btn-success">确认添加</button>
+          </form>
+        </div>
+        <div id="alltable" class="domanage" style="display: none;">
+          <table class="table table-hover">
+            <thead>
+              <tr style="background-color:#000000;color: #ffffff;">
+                <th>#</th>
+                <th>课程名</th>
+                <th>课程介绍</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody id = "addtable">
+
+
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footall1">
+    <div class="container">
+      <ul class="clearfix">
+        <li>
+          <a href="#">网站首页</a>
+        </li>
+        <li>
+          <a href="#">人才招聘</a>
+        </li>
+        <li>
+          <a href="#">联系我们</a>
+        </li>
+        <li>
+          <a href="#">慕课云</a>
+        </li>
+        <li>
+          <a href="#">关于我们</a>
+        </li>
+        <li>
+          <a href="#">讲师招募</a>
+        </li>
+        <li>
+          <a href="#">意见反馈</a>
+        </li>
+        <li>
+          <a href="#">友情链接</a>
+        </li>
+      </ul>
+      <p>
+        Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2
+      </p>
+    </div>
+
+  </footer>
+  <script src="lib/js/jquery.js"></script>
+  <script src="lib/js/bootstrap.js"></script>
+  <script>
+              $(function(){
+                var zja = 1;
+                $("#zj-add").click(function(){
+                  var str1 = '<div class="zj-content" style="padding: 20px; padding-bottom:0;"><div class="form-group"><label>章节标题</label><input name="contentitle'+zja+'" type="text" class="form-control" placeholder="请输入章节标题"></div><div class="form-group"><label for="exampleInputPassword1">章节介绍</label><input name="contentintro'+zja+'" type="text" class="form-control" placeholder="请输入章节介绍"></div><div class="form-group"><label>章节视频内容</label><input name="contentflie'+zja+'" type="file"><p class="help-block">上传章节视频</p></div></div>'
+                  $("#zj-content").append(str1);
+                  zja++;
+
+                });
+              })
+            </script>
+
+  <script src="lib/js/template.js"></script>
+  <script id="tcourse1" type="text/html">
+<div class="col-md-4">
+  <a href="">
+    <img width="200" height="113" src="{{imglink}}" alt=""></a>
+  <h5>{{title}}</h5>
+
+</div>
+
+</script>
+<script id="ttable" type="text/html">
+  <tr>
+                <td>{{index}}</td>
+                <td>{{title}}</td>
+                <td>{{intro}}</td>
+                <td><a data-my-index="{{courseindex}}" class="deleteop" style="color: #ff0000;text-decoration: none;" href="javascript:void(0);">删除</a></td>
+              </tr>
+</script>
+  <script>
+  $(function(){
+    $.ajax({
+      "url":"/tcourse",
+      "type":"get",
+      "success":function(result){
+
+        console.log(result.length);
+        for(var i = 0;i<result.length;i++){
+          var a = result[i].imglink.slice(26);
+
+          result[i].imglink = a;
+          var j = i +1;
+          result[i].index = j;
+
+          var html = template('tcourse1', result[i]);
+          $("#evercourse").append($(html));
+          var html1 = template('ttable',result[i]);
+          $("#addtable").append($(html1));
+          var now = result[i].courseindex;
+          $(".deleteop").click(function(){
+
+            var index = this.dataset["myIndex"];
+            $.ajax({
+              "url":"/delete?courseindex="+index,
+              "type":"get",
+               "success":function(result){
+                  if(result=='-1'){
+                    console.log('删除失败');
+                  }
+                  if(result=='1'){
+                    console.log("删除成功");
+                  }
+                }
+            });
+            $(this).parent().parent().hide();
+          });
+        }
+      }
+    })
+  })
+</script>
+  <script type="text/javascript">
+  $(function(){
+    $("#showall").click(function(){
+      $(".domanage").hide(function(){
+        $("#evercourse").show();
+      });
+    });
+    $("#tianjia").click(function(){
+      $(".domanage").hide(function(){
+        $("#addform").show();
+      });
+    });
+    $("#mdelete").click(function(){
+      $(".domanage").hide(function(){
+        $("#alltable").show();
+      });
+    });
+  });
+
+</script>
+</body>
+
+</html>
