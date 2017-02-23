@@ -4,7 +4,7 @@
 
 ### mooc-1st
 
-[mooc在线学习平台](www.binperson.com:5555/mooc)
+[mooc在线学习平台](http://www.binperson.com:5555/mooc)
 
  - node.js服务器开发
  - mongoose操作mongodb
