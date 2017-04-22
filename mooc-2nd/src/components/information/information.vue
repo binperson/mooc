@@ -32,18 +32,18 @@
           <div class="user-pic-bg"></div>
           <img src="./header.jpg" alt="">
           <div class="set-btn">
-            <a href="">
+            <router-link to="/main/user/setprofile">
               <i class="icon-cog"></i>
-            </a>
+            </router-link>
           </div>
         </div>
         <ul>
           <li>
-            <a href="" class="active">
+            <router-link to="/main/information/homepage">
               <i class="icon-home"></i>
               <span>主页</span>
               <b class="icon-drop_right"></b>
-            </a>
+            </router-link>
           </li>
           <li>
             <a href="">
@@ -66,15 +66,18 @@
               <b class="icon-drop_right"></b>
             </a>
           </li>
+          <li>
+            <router-link to="/main/information/teachermanager">
+              <i class="el-icon-edit"></i>
+              <span>管理</span>
+              <b class="icon-drop_right"></b>
+            </router-link>
+          </li>
+
         </ul>
       </div>
       <div class="u-container">
-        <div class="page-home">
-          <div class="dyanmic-title-wrap">
-            <p class="dynamic-title">Ta的动态</p>
-          </div>
-          <p class="nodata">暂无任何动态</p>
-        </div>
+        <router-view></router-view>
       </div>
     </div>
     <v-footer></v-footer>
@@ -82,12 +85,12 @@
 </template>
 
 <script type="text/ecmascript-6">
-import footer from 'components/footer/footer';
-export default {
-  components: {
-    'v-footer': footer
-  }
-};
+  import footer from 'components/footer/footer';
+  export default {
+    components: {
+      'v-footer': footer
+    }
+  };
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">

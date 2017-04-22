@@ -5,29 +5,30 @@
       <el-row :gutter="0">
         <el-col :span="5">
           <div class="grid-content" @click="changeFalse">
-            <router-link to="/index" class="logo lineH">
+            <router-link to="/main/index" class="logo lineH">
               <div class="logo-content"></div>
             </router-link>
           </div>
         </el-col>
         <el-col :span="2">
           <div class="grid-content" @click="changeTrue">
-            <router-link to="/course" class="text-area lineH">课程</router-link>
+            <router-link to="/main/course" class="text-area lineH">课程</router-link>
           </div>
         </el-col>
         <el-col :span="2">
           <div class="grid-content" @click="changeTrue">
-            <router-link to="/topics" class="text-area lineH">专题<i class="icn-new"></i></router-link>
+            <router-link to="/main/topics" class="text-area lineH">专题<i class="icn-new"></i></router-link>
+          </div>
+        </el-col>
+
+        <el-col :span="2">
+          <div class="grid-content" @click="changeTrue">
+            <router-link to="/main/write" class="text-area lineH">简书</router-link>
           </div>
         </el-col>
         <el-col :span="2">
           <div class="grid-content" @click="changeTrue">
-            <router-link to="/question" class="text-area lineH">爱问</router-link>
-          </div>
-        </el-col>
-        <el-col :span="2">
-          <div class="grid-content" @click="changeTrue">
-            <router-link to="/write" class="text-area lineH">简书</router-link>
+            <router-link to="/main/manager" class="text-area lineH">管理</router-link>
           </div>
         </el-col>
       </el-row>
@@ -49,7 +50,7 @@
           <div v-if="login">
             <el-col :span="8" :offset="14">
               <div class="grid-content" @click="changeTrue">
-                <router-link to="/information" class="text-area">
+                <router-link to="/main/information" class="text-area">
                   <userCard></userCard>
                 </router-link>
               </div>

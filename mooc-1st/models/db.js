@@ -7,7 +7,7 @@
 
 'use strict';
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/mooc');
+mongoose.connect('mongodb://localhost/mo');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

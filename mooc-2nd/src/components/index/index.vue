@@ -316,6 +316,7 @@ export default {
         background: rgba(7,17,27,.5)
         color: #000000
         width: 175px
+        z-index: 1000
         .el-card__body
           padding: 0
           .item

@@ -3,6 +3,9 @@ var config = require('../config')
 if (!process.env.NODE_ENV) process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 var path = require('path')
 var express = require('express')
+var router = require('./controller');
+var db = require("./models/db.js");
+var session = require('express-session');
 var webpack = require('webpack')
 var opn = require('opn')
 var proxyMiddleware = require('http-proxy-middleware')
@@ -41,6 +44,16 @@ Object.keys(proxyTable).forEach(function (context) {
   }
   app.use(proxyMiddleware(context, options))
 })
+
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true
+}));
+app.use("/avatar", express.static("./build/avatar"));
+app.use("/", express.static("./build/upload"));
+app.post("/doaddcourse",router.doAddCourse);
+app.get('/allcourse',router.showAllCourse);
 
 // handle fallback for HTML5 history API
 app.use(require('connect-history-api-fallback')())
