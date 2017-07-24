@@ -17,18 +17,23 @@
         </el-col>
         <el-col :span="2">
           <div class="grid-content" @click="changeTrue">
+            <router-link to="/main/chat" class="text-area lineH">畅聊<i class="icn-new"></i></router-link>
+          </div>
+        </el-col>
+        <el-col :span="2" v-show="false">
+          <div class="grid-content" @click="changeTrue">
             <router-link to="/main/topics" class="text-area lineH">专题<i class="icn-new"></i></router-link>
           </div>
         </el-col>
 
-        <el-col :span="2">
+        <el-col :span="2" v-show="false">
           <div class="grid-content" @click="changeTrue">
             <router-link to="/main/write" class="text-area lineH">简书</router-link>
           </div>
         </el-col>
-        <el-col :span="2">
+        <el-col v-show="user.limits === 3" :span="2">
           <div class="grid-content" @click="changeTrue">
-            <router-link to="/main/manager" class="text-area lineH">管理</router-link>
+            <router-link to="/main/manager/docheck" class="text-area lineH">管理</router-link>
           </div>
         </el-col>
       </el-row>
@@ -51,7 +56,7 @@
             <el-col :span="8" :offset="14">
               <div class="grid-content" @click="changeTrue">
                 <router-link to="/main/information" class="text-area">
-                  <userCard></userCard>
+                  <userCard :user="user"></userCard>
                 </router-link>
               </div>
             </el-col>
@@ -61,14 +66,14 @@
               <el-row :gutter="2">
                 <div @click="showsign('first')">
                   <el-col :span="10" >
-                    <div class="grid-content text-area">
+                    <div class="grid-content signiu text-area">
                       登录
                     </div>
                   </el-col>
                 </div>
                 <div @click="showsign('second')">
                   <el-col :span="10">
-                    <div class="grid-content text-area">
+                    <div class="grid-content signiu text-area">
                       注册
                     </div>
                   </el-col>
@@ -83,33 +88,42 @@
 </template>
 
 <script type="text/ecmascript-6">
-import userCard from 'components/userCard/userCard';
-export default {
-  data() {
-    return {
-      isActive: false,
-      login: true,
-      inputkey: ''
-    };
-  },
-  methods: {
-    changeTrue() {
-      this.isActive = true;
+  import userCard from 'components/userCard/userCard';
+  export default {
+    props: {
+        login: {
+          type: Boolean,
+          default: false
+        },
+        user: {
+            type: Object,
+            default: {}
+        }
     },
-    changeFalse() {
-      this.isActive = false;
+    data() {
+      return {
+        isActive: false,
+        inputkey: ''
+      };
     },
-    handleIconClick(ev) {
-      console.log(ev);
+    methods: {
+      changeTrue() {
+        this.isActive = true;
+      },
+      changeFalse() {
+        this.isActive = false;
+      },
+      handleIconClick(ev) {
+        console.log(ev);
+      },
+      showsign(act) {
+          this.$emit('showsign', act);
+      }
     },
-    showsign(act) {
-        this.$emit('showsign', act);
+    components: {
+      userCard
     }
-  },
-  components: {
-    userCard
-  }
-};
+  };
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
@@ -129,6 +143,8 @@ export default {
     .grid-content
       height: 60px
       color: #787d82
+      &.signiu
+        line-height: 60px
       .lineH
         line-height: 60px
         text-align: center

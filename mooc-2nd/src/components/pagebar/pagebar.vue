@@ -1,5 +1,5 @@
 <template>
-  <div class="pagebar">
+  <div class="pagebar" v-show="false">
     <div class="page clearfix">
       <el-pagination
         @size-change="handleSizeChange"

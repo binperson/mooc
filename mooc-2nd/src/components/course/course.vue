@@ -10,19 +10,9 @@
               </div>
               <div class="bd">
                 <ul>
-                  <li class="course-nav-item on"><a href="">全部</a></li>
-                  <li class="course-nav-item"><a href="">计算机</a></li>
-                  <li class="course-nav-item"><a href="">经济学</a></li>
-                  <li class="course-nav-item"><a href="">法学</a></li>
-                  <li class="course-nav-item"><a href="">教育学</a></li>
-                  <li class="course-nav-item"><a href="">文学</a></li>
-                  <li class="course-nav-item"><a href="">历史学</a></li>
-                  <li class="course-nav-item"><a href="">理学</a></li>
-                  <li class="course-nav-item"><a href="">工学</a></li>
-                  <li class="course-nav-item"><a href="">医学</a></li>
-                  <li class="course-nav-item"><a href="">管理学</a></li>
-                  <li class="course-nav-item"><a href="">艺术</a></li>
-                  <li class="course-nav-item"><a href="">其他</a></li>
+                  <li @click="selectkind('全部')" class="course-nav-item" :class="{'on':selectType==='全部'}"><a>全部</a></li>
+                  <li @click="selectkind(item)" v-for="item in classify" class="course-nav-item"
+                      :class="{'on':selectType===item}"><a>{{item}}</a></li>
                 </ul>
               </div>
             </div>
@@ -32,10 +22,9 @@
               </div>
               <div class="bd">
                 <ul>
-                  <li class="course-nav-item on"><a href="">全部</a></li>
-                  <li class="course-nav-item"><a href="">开课中</a></li>
-                  <li class="course-nav-item"><a href="">即将开课</a></li>
-                  <li class="course-nav-item"><a href="">已结课</a></li>
+                  <li @click="selectstate(2)" class="course-nav-item" :class="{'on':selectState===2}"><a>全部</a></li>
+                  <li @click="selectstate(0)" class="course-nav-item" :class="{'on':selectState===0}"><a>即将开课</a></li>
+                  <li @click="selectstate(1)" class="course-nav-item" :class="{'on':selectState===1}"><a>已开课</a></li>
                 </ul>
               </div>
             </div>
@@ -54,21 +43,31 @@
         <div class="moco-course-list">
           <ul class="clearfix">
 
-            <li v-for="(item, index) in courses" class="moco-course-wrap">
-              <div class="moco-course-tag">即将开课</div>
+            <li v-show="needShow(item.category,item.limits)" v-for="(item, index) in courses" class="moco-course-wrap">
+              <div class="moco-course-tag">{{item.limits===0?'即将开课':'已开课'}}</div>
               <i class="moco-course-tag-bg"></i>
-              <router-link :to="'/main/learn/'+item.courseindex">
+              <router-link v-show="item.limits===1" :to="'/main/learn/'+item.courseindex+'/chapter'">
                 <div class="moco-course-box">
                   <img :src="item.imglink" height="124" width="100%" alt="">
                   <div class="moco-course-intro">
-                    <h3><i>高</i>{{item.title}}</h3>
+                    <h3><i>{{item.rank}}</i>{{item.title}}</h3>
                     <p>{{item.intro}}</p>
                   </div>
                   <div class="moco-course-bottom">
-                    <span class="l"> 813人在学</span>
+                    <span class="l"> {{item.learnnum}}人在学</span>
                   </div>
                 </div>
               </router-link>
+              <div class="moco-course-box" v-show="item.limits===0">
+                <img :src="item.imglink" height="124" width="100%" alt="">
+                <div class="moco-course-intro">
+                  <h3><i>{{item.rank}}</i>{{item.title}}</h3>
+                  <p>{{item.intro}}</p>
+                </div>
+                <div class="moco-course-bottom">
+                  <span class="l"> {{item.learnnum}}人在学</span>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
@@ -83,10 +82,49 @@
   import footer from 'components/footer/footer';
   import pagebar from 'components/pagebar/pagebar';
   export default {
+    props: {
+      classify: {
+        type: Array,
+        default: []
+      }
+    },
     data() {
       return {
-        courses: []
+        courses: [],
+        selectType: '全部',
+        selectState: 2
       };
+    },
+    methods: {
+      selectkind(type) {
+        this.selectType = type;
+      },
+      selectstate(type) {
+        this.selectState = type;
+      },
+      needShow(arrtype, state) {
+        if (this.selectType === '全部' && this.selectState === 2) {
+          return true;
+        } else if (this.selectState === 2) {
+          if (arrtype.indexOf(this.selectType) !== -1) {
+            return true;
+          } else {
+            return false;
+          }
+        } else if (this.selectType === '全部') {
+            if (this.selectState === state) {
+              return true;
+            } else {
+              return false;
+            }
+        } else {
+            if (arrtype.indexOf(this.selectType) !== -1 && this.selectState === state) {
+              return true;
+            } else {
+              return false;
+            }
+        }
+      }
     },
     created() {
       console.log(1111);

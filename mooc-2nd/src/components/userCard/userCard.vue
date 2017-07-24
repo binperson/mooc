@@ -1,32 +1,31 @@
 <template>
   <div class="userCard">
     <div class="userheader-wrap">
-      <img src="./user.jpg" alt="">
+      <img :src="user.avatar" alt="">
     </div>
     <div class="g-user-card">
       <div class="card-inner">
         <div class="card-top clearfix">
-          <a href="" class="l"><img src="./user.jpg" alt=""></a>
+          <a href="" class="l"><img :src="user.avatar" alt=""></a>
           <div class="card-top-right-box l">
             <a href="">
-              <span class="name text-ellipsis">binperson</span>
+              <span class="name text-ellipsis">{{user.username}}</span>
             </a>
             <div class="meta">
-              <a href="">学习时长<b>64小时41分</b></a>
+              <a href="">11<b>{{user.autograph}}</b></a>
             </div>
           </div>
         </div>
-        <div class="card-history">
+        <div v-if="user.courses[0] !== undefined" class="card-history">
           <span class="history-item">
-            <span class="tit text-ellipsis">用JS实现购物车特效</span>
-            <span class="media-name text-ellipsis">1-1 JS实现购物车功能介绍</span>
+            <span class="tit text-ellipsis">{{user.courses[0].title}}</span>
+            <span class="media-name text-ellipsis">{{user.courses[0].nexttitle}}</span>
             <i class="icon-clock"></i>
-            <a href="" class="continue" title="用JS实现购物车特效
-1-1  JS实现购物车功能介绍">继续</a>
+            <router-link :to="'/main/video/' + user.courses[0].id + '/' + user.courses[0].index + '/comment'" class="continue">继续</router-link>
           </span>
         </div>
         <div class="card-sets clearfix">
-          <a href="" class="r">安全退出</a>
+          <a @click="exit" class="r">安全退出</a>
         </div>
       </div>
     </div>
@@ -34,9 +33,30 @@
 </template>
 
 <script type="text/ecmascript-6">
-export default {
-
-};
+  export default {
+    props: {
+      user: {
+        type: Object,
+        default: {
+          'username': 'binperson',
+          'useremail': 'useremail',
+          'avatar': './user.jpg'
+        }
+      }
+    },
+    methods: {
+      exit() {
+        console.log(222);
+        this.$http.post('/exit').then(response => {
+          response = response.body;
+            if (response === '退出成功') {
+              this.$router.push('/');
+            }
+          }, response => {
+        });
+      }
+    }
+  };
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
@@ -100,6 +120,7 @@ export default {
               width: 170px
           .meta
             font-size: 12px
+            width: 170px
             a
               margin-right: 12px
               b

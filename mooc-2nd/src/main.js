@@ -18,6 +18,16 @@ import homepage from 'components/homepage/homepage';
 import teachermanager from 'components/teachermanager/teachermanager';
 import learn from 'components/learn/learn';
 import video from 'components/videostart/videostart';
+import docheck from 'components/docheck/docheck';
+import docheckt from 'components/docheckt/docheckt';
+import recentlearn from 'components/recentlearn/recentlearn';
+import comment from 'components/comment/comment';
+import answer from 'components/answer/answer';
+import chat from 'components/chat/chat';
+import allcomments from 'components/allcomments/allcomments';
+import chapter from 'components/chapter/chapter';
+import deletecourse from 'components/delete/delete';
+import ownwrite from 'components/ownwrite/ownwrite';
 
 import {
   Row,
@@ -38,7 +48,12 @@ import {
   Switch,
   Checkbox,
   CheckboxGroup,
-  Upload
+  Upload,
+  Radio,
+  Table,
+  TableColumn,
+  RadioGroup,
+  Icon
 } from 'element-ui';
 
 Vue.component(Row.name, Row);
@@ -61,6 +76,11 @@ Vue.use(Checkbox);
 Vue.use(CheckboxGroup);
 Vue.use(Switch);
 Vue.use(Upload);
+Vue.use(Radio);
+Vue.use(RadioGroup);
+Vue.use(Table);
+Vue.use(TableColumn);
+Vue.use(Icon);
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
@@ -74,6 +94,10 @@ const routes = [
       name: 'index',
       component: index
     }, {
+      path: 'chat',
+      name: 'chat',
+      component: chat
+    }, {
       path: 'course',
       name: 'course',
       component: course
@@ -84,7 +108,20 @@ const routes = [
     }, {
       path: 'manager',
       name: 'manager',
-      component: manager
+      component: manager,
+      children: [{
+        path: 'docheck',
+        name: 'docheck',
+        component: docheck
+      }, {
+        path: 'docheckt',
+        name: 'docheckt',
+        component: docheckt
+      }, {
+        path: 'delete',
+        name: 'delete',
+        component: deletecourse
+      }]
     }, {
       path: 'write',
       name: 'write',
@@ -101,6 +138,14 @@ const routes = [
         path: 'teachermanager',
         name: 'teachermanager',
         component: teachermanager
+      }, {
+        path: 'recentlearn',
+        name: 'recentlearn',
+        component: recentlearn
+      }, {
+        path: 'ownwrite',
+        name: 'ownwrite',
+        component: ownwrite
       }]
     }, {
       path: 'user',
@@ -117,10 +162,28 @@ const routes = [
       }]
     }, {
         path: 'learn/:id',
-        component: learn
+        component: learn,
+        children: [{
+          path: 'comments',
+          name: 'allcomments',
+          component: allcomments
+        }, {
+          path: 'chapter',
+          name: 'chapter',
+          component: chapter
+        }]
     }, {
       path: 'video/:id/:index',
-      component: video
+      component: video,
+      children: [{
+        path: 'comment',
+        name: 'comment',
+        component: comment
+      }, {
+      path: 'answer',
+      name: 'answer',
+      component: answer
+      }]
     }]
   }
 ];
